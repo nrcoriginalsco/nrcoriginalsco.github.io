@@ -19,14 +19,18 @@ header h1 {
     font-size: 2.5rem;
 }
 
+/* Contenedor principal para centrar contenido */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 /* Rejilla de proyectos */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 /* Tarjeta de proyecto individual */
@@ -69,6 +73,46 @@ header h1 {
     background-color: #aaa;
     cursor: not-allowed;
 }
+
+/* --- NUEVOS ESTILOS PARA LA SECCIÓN DE SCRIPTS --- */
+
+.scripts-section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 3rem; /* Espacio entre la sección de programas y esta */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.scripts-section h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.script-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.script-list li {
+    margin-bottom: 1rem;
+}
+
+.script-list a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.script-list a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 
 /* Pie de página */
 footer {
