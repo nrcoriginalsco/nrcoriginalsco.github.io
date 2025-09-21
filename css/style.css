@@ -34,6 +34,14 @@ main {
 }
 
 /* Tarjeta de proyecto individual */
+
+/* --- NUEVOS ESTILOS PARA LOGOS DE APP EN TARJETAS --- */
+.app-logo {
+    max-width: 70px; /* Tamaño del logo en la tarjeta */
+    height: auto;
+    margin-bottom: 15px;
+}
+
 .project-card {
     background-color: #fff;
     border-radius: 10px;
