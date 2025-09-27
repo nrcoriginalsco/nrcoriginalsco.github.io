@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto UniConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2;
+        }
+        /* --- CORRECCIÓN: Estilo para ajustar el texto en los bloques de código --- */
+        pre {
+            white-space: pre-wrap;   /* Permite que el texto pase a la siguiente línea */
+            word-break: break-all;   /* Rompe las palabras largas si es necesario */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <!-- NUEVO: Logo centrado -->
+            <img src="logo.png" alt="Logo de UniConnect" class="mx-auto h-24 w-24 mb-4" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFFFFF/333333?text=Logo';">
+            <h1 class="text-4xl font-bold text-gray-900">Proyecto UniConnect</h1>
+            <p class="text-lg text-gray-600 mt-1">Una Aplicación Educativa Cliente-Servidor</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Sección de Resumen -->
+        <section class="mb-16">
+            <h2 class="section-title">Resumen del Proyecto</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Concepto</h3>
+                    <p class="text-gray-700">Una aplicación de escritorio diseñada para optimizar la comunicación y la gestión de tareas entre profesores y estudiantes en un entorno de red local.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Objetivo</h3>
+                    <p class="text-gray-700">Crear una plataforma intuitiva y centralizada que permita a los profesores asignar actividades con recursos y a los estudiantes seguir su progreso de manera interactiva.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Tecnologías Clave</h3>
+                    <p class="text-gray-700">Python, Flask (para el servidor), CustomTkinter (para la interfaz), SQLite (base de datos), y Requests para la comunicación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Arquitectura -->
+        <section class="mb-16">
+            <h2 class="section-title">Arquitectura del Sistema</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <p class="text-gray-700 mb-6">UniConnect opera bajo una robusta arquitectura <strong>cliente-servidor</strong>. Esta separación de responsabilidades garantiza que la lógica de negocio y los datos estén centralizados y seguros en el servidor, mientras que la interfaz de usuario en el cliente es ligera y se enfoca únicamente en la interacción.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">El Servidor (Backend)</h3>
+                        <p class="text-gray-600 mb-4">Ejecutado en un <strong>Windows Server</strong>, es el cerebro de la aplicación. Sus responsabilidades son:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>API REST con Flask:</strong> Expone URLs (endpoints) para manejar todas las operaciones de la aplicación de forma segura.</li>
+                            <li><strong>Base de Datos SQLite:</strong> Almacena de forma persistente la información de usuarios, actividades, mensajes y archivos.</li>
+                            <li><strong>Servidor de Archivos:</strong> Gestiona la subida y descarga de materiales para las actividades en una carpeta centralizada.</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">El Cliente (Frontend)</h3>
+                        <p class="text-gray-600 mb-4">Es la aplicación de escritorio que se instala en la PC de cada profesor y estudiante. Sus responsabilidades son:</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>Interfaz Gráfica con CustomTkinter:</strong> Ofrece una experiencia de usuario moderna, limpia y con un diseño profesional.</li>
+                            <li><strong>Interacción con el Usuario:</strong> Captura las acciones del usuario (iniciar sesión, crear actividad, enviar mensaje).</li>
+                            <li><strong>Comunicación con la API:</strong> Utiliza la librería 'requests' para enviar y recibir datos del servidor.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Características -->
+        <section class="mb-16">
+            <h2 class="section-title">Características Principales</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6">
+                    <h3 class="font-semibold text-lg mb-2">Pantalla de Carga Profesional</h3>
+                    <p class="text-gray-600">Una pantalla de inicio estilo "instalador" con barra de progreso animada que da una excelente primera impresión.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-semibold text-lg mb-2">Inicio de Sesión Moderno</h3>
+                    <p class="text-gray-600">Una interfaz de login con un diseño pulcro, validaciones visuales y animaciones fluidas para éxito y error.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-semibold text-lg mb-2">Dashboard Intuitivo por Roles</h3>
+                    <p class="text-gray-600">La interfaz se adapta, mostrando herramientas de gestión para el profesor y una vista de progreso para el estudiante.</p>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="font-semibold text-lg mb-2">Gestión de Actividades</h3>
+                    <p class="text-gray-600">El profesor puede crear actividades con pasos dinámicos, descripciones, imágenes y archivos adjuntos.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-semibold text-lg mb-2">Seguimiento de Progreso</h3>
+                    <p class="text-gray-600">Los estudiantes pueden ver las actividades y marcar su progreso en un checklist interactivo.</p>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="font-semibold text-lg mb-2">Chat en Tiempo Real</h3>
+                    <p class="text-gray-600">Un chat general permite la comunicación fluida entre todos los usuarios conectados a la plataforma.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Recursos y Compilación -->
+        <section class="mb-16">
+            <h2 class="section-title">Recursos y Compilación</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Columna de Recursos -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Recursos Utilizados</h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-lg text-gray-700">Hardware</h4>
+                        <ul class="list-disc list-inside text-gray-600 mt-2">
+                            <li><strong>Servidor:</strong> PC Genérica con procesador multi-núcleo y 4GB de RAM.</li>
+                            <li><strong>Cliente:</strong> Cualquier PC estándar con Windows 10 o superior.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-700">Software</h4>
+                        <ul class="list-disc list-inside text-gray-600 mt-2">
+                            <li><strong>Sistema Operativo Servidor:</strong> Windows Server 2019.</li>
+                            <li><strong>Lenguaje de Programación:</strong> Python 3.13.</li>
+                            <li><strong>Librerías Clave:</strong> Flask, CustomTkinter, Pillow, Requests.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Columna de Compilación -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Compilación de la Aplicación</h3>
+                    <p class="text-gray-600 mb-4">Para distribuir la aplicación cliente sin que los usuarios necesiten instalar Python, se utiliza la herramienta <strong>PyInstaller</strong>.</p>
+                    <h4 class="font-semibold text-lg text-gray-700 mb-2">1. Instalación de PyInstaller</h4>
+                    <pre class="bg-gray-100 p-3 rounded-md text-sm text-gray-800"><code>pip install pyinstaller</code></pre>
+                    <h4 class="font-semibold text-lg text-gray-700 mt-4 mb-2">2. Comando de Compilación</h4>
+                    <p class="text-gray-600 mb-2">Desde la terminal, en la carpeta del proyecto, se ejecuta el siguiente comando:</p>
+                    <pre class="bg-gray-100 p-3 rounded-md text-sm text-gray-800"><code>pyinstaller --onefile --windowed --add-data "assets;assets" client.py</code></pre>
+                    <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                        <li><code>--onefile</code>: Empaqueta todo en un único archivo <strong>.exe</strong>.</li>
+                        <li><code>--windowed</code>: Evita que se abra una consola negra detrás de la aplicación.</li>
+                        <li><code>--add-data</code>: Incluye la carpeta de imágenes y assets en el ejecutable.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería -->
+        <section>
+            <h2 class="section-title">Galería de la Aplicación</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <img src="https://placehold.co/600x400/FFFFFF/333333?text=Pantalla+de+Carga" alt="Pantalla de Carga" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold">Pantalla de Carga</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/FFFFFF/333333?text=Inicio+de+Sesión" alt="Inicio de Sesión" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold">Inicio de Sesión</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/FFFFFF/333333?text=Dashboard+Principal" alt="Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold">Dashboard Principal</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p><strong>NRC Codes LLC Co.</strong> &copy; 2025. Todos los derechos reservados.</p>
+            <p>Programado por: <strong>Jose Barragan</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
