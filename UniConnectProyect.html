@@ -16,10 +16,9 @@
         .card {
             @apply bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2;
         }
-        /* --- CORRECCIÓN: Estilo para ajustar el texto en los bloques de código --- */
         pre {
-            white-space: pre-wrap;   /* Permite que el texto pase a la siguiente línea */
-            word-break: break-all;   /* Rompe las palabras largas si es necesario */
+            white-space: pre-wrap;
+            word-break: break-all;
         }
     </style>
 </head>
@@ -28,7 +27,6 @@
     <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-8 text-center">
-            <!-- NUEVO: Logo centrado -->
             <img src="assets/logopage.png" alt="Logo de UniConnect" class="mx-auto h-24 w-24 mb-4" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFFFFF/333333?text=Logo';">
             <h1 class="text-4xl font-bold text-gray-900">Proyecto UniConnect</h1>
             <p class="text-lg text-gray-600 mt-1">Una Aplicación Educativa Cliente-Servidor</p>
@@ -56,7 +54,7 @@
             </div>
         </section>
 
-        <!-- NUEVO: Sección de Descarga -->
+        <!-- Sección de Descarga -->
         <section class="mb-16 text-center">
             <h2 class="section-title">Descarga</h2>
             <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Obtén la última versión de la aplicación cliente de UniConnect. El archivo ejecutable (.exe) está disponible para Windows.</p>
@@ -169,20 +167,29 @@
         <section>
             <h2 class="section-title">Galería de la Aplicación</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
                 <div class="card">
-                    <img src="assets/splashscreen.png" alt="Pantalla de Carga" class="w-full h-48 object-cover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/splashscreen" alt="Pantalla de Carga" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-4">
                         <h4 class="font-semibold">Pantalla de Carga</h4>
                     </div>
                 </div>
+                <!-- Tarjeta 2 -->
                 <div class="card">
-                    <img src="assets/login_window.png" alt="Inicio de Sesión" class="w-full h-48 object-cover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/login_window.png" alt="Inicio de Sesión" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-4">
                         <h4 class="font-semibold">Inicio de Sesión</h4>
                     </div>
                 </div>
+                <!-- Tarjeta 3 -->
                 <div class="card">
-                    <img src="assets/dashboard.png" alt="Dashboard" class="w-full h-48 object-cover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/dashboard.png" alt="Dashboard" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-4">
                         <h4 class="font-semibold">Dashboard Principal</h4>
                     </div>
